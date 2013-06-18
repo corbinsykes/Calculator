@@ -40,7 +40,7 @@ puts "What type of function would you like to perform?"
   function_choice = gets.chomp
 case function_choice.downcase
   when "arithmatic"
-    puts "Which Operation?"
+    puts "Which Operation? (Select a Number)"
       puts "1. Addition"
       puts "2. Subtraction"
       puts "3. Multiplication"
@@ -48,29 +48,24 @@ case function_choice.downcase
       operation_choice = gets.chomp
 
       case operation_choice.downcase
-        when "addition"
-          puts "What's the first number?"
-            x = gets.chomp.to_f
-          puts "What's the second number?"
-            y = gets.chomp.to_f
+        when "1"
+          x, y = get_two_numbers
         p add(x,y)
 
-        when "subtraction"
-          puts "What's the first number?"
-            x = gets.chomp.to_f
-          puts "What's the second number?"
-            y = gets.chomp.to_f
+        when "2"
+          x, y = get_two_numbers
         p subtract(x,y)
 
-        when "division"
+        when "3"
+          x, y = get_two_numbers
+        p multiply(x,y)
+
+        when "4"
           puts "Would you like a decimal or a remainder?"
             division_choice = gets.chomp
             case division_choice.downcase
               when "decimal"
-                puts "What's the first number?"
-                  x = gets.chomp.to_f
-                puts "What's the second number?"
-                  y = gets.chomp.to_f
+                x, y = get_two_numbers
               p divide_decimal(x,y)
 
               when "remainder"
@@ -80,12 +75,5 @@ case function_choice.downcase
                   y = gets.chomp.to_i
               p divide_remainder(x,y)
             end
-
-        when "multiplication"
-          puts "What's the first number?"
-            x = gets.chomp.to_f
-          puts "What's the second number?"
-            y = gets.chomp.to_f
-        p multiply(x,y)
       end
 end
