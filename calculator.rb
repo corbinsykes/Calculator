@@ -42,6 +42,10 @@ def earned_run_average(earned_runs_allowed,innings_pitched)
   return (earned_runs_allowed/innings_pitched)*9
 end
 
+def passer_rtg(att,yds,tds,comp,int)
+  return ((8.4*yds)+(330*tds)+(100*comp)-(200*int))/att
+end
+
 puts "Before we get started, what's your name?"
   name = gets.chomp
     puts "Welcome, #{name}. I'm a calculator. Let's get started, shall we?"
@@ -131,4 +135,17 @@ case function_choice.downcase
     puts "How many earned runs were allowed?"
       y = gets.chomp.to_f
   p earned_run_average(y,x)
+
+  when "5"
+    puts "How many passes were thrown?"
+      att = gets.chomp.to_f
+    puts "How many yards were accrued through the air?"
+      yds = gets.chomp.to_f
+    puts "How many touchdowns were thrown?"
+      tds = gets.chomp.to_f
+    puts "How many completions?"
+      comp = gets.chomp.to_f
+    puts "How many picks (interceptions)?"
+      int = gets.chomp.to_f
+  p passer_rtg(att,yds,tds,comp,int)
 end
