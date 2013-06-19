@@ -51,7 +51,7 @@ puts "Before we get started, what's your name?"
     puts "Welcome, #{name}. I'm a calculator. Let's get started, shall we?"
 
 puts "What type of function would you like to perform? (Select a Number)"
-  puts  "1. Arithmatic"
+  puts  "1. Arithmetic"
   puts  "2. Slugging Percentage"
   puts  "3. Body Mass Index"
   puts  "4. Earned Run Average"
