@@ -38,6 +38,10 @@ def bmi_metric(m,h)
   return (m/(h**2))
 end
 
+def earned_run_average(earned_runs_allowed,innings_pitched)
+  return (earned_runs_allowed/innings_pitched)*9
+end
+
 puts "Before we get started, what's your name?"
   name = gets.chomp
     puts "Welcome, #{name}. I'm a calculator. Let's get started, shall we?"
@@ -121,4 +125,10 @@ case function_choice.downcase
               weight = gets.chomp.to_f
           p bmi_us(weight,height)
         end
+  when "4"
+    puts "How many total innings were pitched?"
+      x = gets.chomp.to_f
+    puts "How many earned runs were allowed?"
+      y = gets.chomp.to_f
+  p earned_run_average(y,x)
 end
